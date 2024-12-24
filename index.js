@@ -57,63 +57,76 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-let humanScore = 0;
-let computerScore = 0;
+function playGame () {
+    let humanScore = 0;
+    let computerScore = 0;
 
-// Round One
-let computerChoiceRoundOne = getComputerChoice();
-let humanChoiceRoundOne = getHumanChoice();
-let winnerRoundOne = playRound(humanChoiceRoundOne, computerChoiceRoundOne);
-if (winnerRoundOne === "user wins") {
-    humanScore++;
-} else if (winnerRoundOne === "computer wins") {
-    computerScore++;
-} 
-console.log(`The score is: ${humanScore} (You) ${computerScore} (computer).`);
+    // Round One
+    let computerChoiceRoundOne = getComputerChoice();
+    let humanChoiceRoundOne = getHumanChoice();
+    let winnerRoundOne = playRound(humanChoiceRoundOne, computerChoiceRoundOne);
+    if (winnerRoundOne === "user wins") {
+        humanScore++;
+    } else if (winnerRoundOne === "computer wins") {
+        computerScore++;
+    } 
+    console.log(`The score is: ${humanScore} (You) ${computerScore} (computer).`);
 
-// Round Two
-let computerChoiceRoundTwo = getComputerChoice();
-let humanChoiceRoundTwo = getHumanChoice();
-let winnerRoundTwo = playRound(humanChoiceRoundTwo, computerChoiceRoundTwo);
-if (winnerRoundTwo === "user wins") {
-    humanScore++;
-} else if (winnerRoundTwo === "computer wins") {
-    computerScore++;
+    // Round Two
+    let computerChoiceRoundTwo = getComputerChoice();
+    let humanChoiceRoundTwo = getHumanChoice();
+    let winnerRoundTwo = playRound(humanChoiceRoundTwo, computerChoiceRoundTwo);
+    if (winnerRoundTwo === "user wins") {
+        humanScore++;
+    } else if (winnerRoundTwo === "computer wins") {
+        computerScore++;
+    }
+    console.log(`The score is: ${humanScore} (You) ${computerScore} (computer).`);
+
+    // Round Three
+    let computerChoiceRoundThree = getComputerChoice();
+    let humanChoiceRoundThree = getHumanChoice();
+    let winnerRoundThree = playRound(humanChoiceRoundThree, computerChoiceRoundThree);
+    if (winnerRoundThree === "user wins") {
+        humanScore++;
+    } else if (winnerRoundThree === "computer wins") {
+        computerScore++;
+    }
+    console.log(`The score is: ${humanScore} (You) ${computerScore} (computer).`);
+
+    // Round Four
+    let computerChoiceRoundFour = getComputerChoice();
+    let humanChoiceRoundFour = getHumanChoice();
+    let winnerRoundFour = playRound(humanChoiceRoundFour, computerChoiceRoundFour);
+    if (winnerRoundFour === "user wins") {
+        humanScore++;
+    } else if (winnerRoundFour === "computer wins") {
+        computerScore++;
+    }
+    console.log(`The score is: ${humanScore} (You) ${computerScore} (computer).`);
+
+    // Round Five
+    let computerChoiceRoundFive = getComputerChoice();
+    let humanChoiceRoundFive = getHumanChoice();
+    let winnerRoundFive = playRound(humanChoiceRoundFive, computerChoiceRoundFive);
+    if (winnerRoundFive === "user wins") {
+        humanScore++;
+    } else if (winnerRoundFive === "computer wins") {
+        computerScore++;
+    }
+    console.log(`The score is: ${humanScore} (You) ${computerScore} (computer).`);
+
+    if (humanScore === computerScore) {
+        console.log("Close one, The game is a DRAW..")
+    } else if (humanScore > computerScore) {
+        console.log("Congrats, You WON the game!!") 
+    } else if (computerScore > humanScore) {
+        console.log("Commiserations, You LOST against the computer..")
+    }
 }
-console.log(`The score is: ${humanScore} (You) ${computerScore} (computer).`);
 
-// Round Three
-let computerChoiceRoundThree = getComputerChoice();
-let humanChoiceRoundThree = getHumanChoice();
-let winnerRoundThree = playRound(humanChoiceRoundThree, computerChoiceRoundThree);
-if (winnerRoundThree === "user wins") {
-    humanScore++;
-} else if (winnerRoundThree === "computer wins") {
-    computerScore++;
-}
-console.log(`The score is: ${humanScore} (You) ${computerScore} (computer).`);
+playGame();
 
-// Round Four
-let computerChoiceRoundFour = getComputerChoice();
-let humanChoiceRoundFour = getHumanChoice();
-let winnerRoundFour = playRound(humanChoiceRoundFour, computerChoiceRoundFour);
-if (winnerRoundFour === "user wins") {
-    humanScore++;
-} else if (winnerRoundFour === "computer wins") {
-    computerScore++;
-}
-console.log(`The score is: ${humanScore} (You) ${computerScore} (computer).`);
-
-// Round Five
-let computerChoiceRoundFive = getComputerChoice();
-let humanChoiceRoundFive = getHumanChoice();
-let winnerRoundFive = playRound(humanChoiceRoundFive, computerChoiceRoundFive);
-if (winnerRoundFive === "user wins") {
-    humanScore++;
-} else if (winnerRoundFive === "computer wins") {
-    computerScore++;
-}
-console.log(`The score is: ${humanScore} (You) ${computerScore} (computer).`);
 
 
 
