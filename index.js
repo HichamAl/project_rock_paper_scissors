@@ -50,13 +50,15 @@ function playGame(){
             }
     }
 
-    for (let i = 0; i < 5; ++i){
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
-        playRound(humanChoice, computerChoice);
-        console.log(`humanscore: ${humanScore} computerscore: ${computerScore}`);
-    }
-    
+    // for (let i = 0; i < 5; ++i){
+    //     const humanChoice = getHumanChoice();
+    //     const computerChoice = getComputerChoice();
+    //     playRound(humanChoice, computerChoice);
+    //     console.log(`humanscore: ${humanScore} computerscore: ${computerScore}`);
+    // }
+
+    // ctrl + k + c comment geselecteerde text
+     
     if (humanScore == computerScore){
         console.log(`The game is a draw`);
     } else if (humanScore > computerScore){
@@ -67,7 +69,7 @@ function playGame(){
     
 }
 
-playGame();
+// playGame();
 
 
 
