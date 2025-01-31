@@ -1,6 +1,5 @@
 function getComputerChoice () {
     let randomNumber = Math.floor(Math.random()*3);
-
     if (randomNumber == 0) {
         let computerChoice = "rock";
         return computerChoice;
@@ -9,67 +8,69 @@ function getComputerChoice () {
         return computerChoice;
     } else {
         let computerChoice = "scissors";
-        return computerChoice;
-    }    
-}
+        return computerChoice;}    
+};
 
-function getHumanChoice () {
-    let getChoice = prompt("Enter a choice: rock, paper or scissors");
-    let choiceLowercase = getChoice.toLowerCase();
+let humanScore = 0;
+let computerScore = 0;  
 
-    if (choiceLowercase == "rock") {
-        let userChoice = "rock";
-        return userChoice;
-    } else if (choiceLowercase == "paper") {
-        let userChoice = "paper";
-        return userChoice;
-    } else if (choiceLowercase == "scissors"){
-        let userChoice = "scissors";
-        return userChoice;
-    }
-}
+// get winner
+const getwinnerdiv = document.querySelector("#winner");
+let winner = document.createElement("p");
+getwinnerdiv.appendChild(winner);
 
-function playGame(){
+// score 
+const scorediv = document.querySelector("#score");
+let score = document.createElement("p");
+scorediv.appendChild(score);
 
-    let humanScore = 0;
-    let computerScore = 0;
+// round result
+const results = document.querySelector("#results");
+const roundresult = document.createElement("p");
+results.appendChild(roundresult);
 
-    function playRound(humanChoice, computerChoice){
-        if (humanChoice == computerChoice){
-            console.log("It's a draw..");
-        } else if (
-            (humanChoice == "rock" && computerChoice == "scissors") ||
-            (humanChoice == "paper" && computerChoice == "rock")||
-            (humanChoice == "scissors" && computerChoice == "paper")) {
-                console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-                ++humanScore;
-            }
+function playRound(cpuchoice, humchoice){
+    if (humchoice == cpuchoice){
+        roundresult.textContent = `It's a draw.. your ${humchoice} vs cpu's ${cpuchoice}`} 
+        else if (
+            (humchoice == "rock" && cpuchoice == "scissors") ||
+            (humchoice == "paper" && cpuchoice == "rock")||
+            (humchoice == "scissors" && cpuchoice == "paper")) {
+                roundresult.textContent = `You win! Your ${humchoice} beats cpu's ${cpuchoice}`;
+                ++humanScore;}
             else {
-                console.log(`You lost, ${computerChoice} beats ${humanChoice}`);
-                ++computerScore;
-            }
+                roundresult.textContent = `You lost, cpu chose ${cpuchoice} which beats your ${humchoice}`;
+                ++computerScore;}
+        score.textContent = `Human score ${humanScore} - Cpu score ${computerScore}`;
+
+        if (humanScore == 5){
+            winner.textContent = `Congrats you won!`;
+        }
+            else if (computerScore == 5){
+                winner.textContent = `Commiserations you lost against the CPU.`;
+            };    
     }
 
-    // for (let i = 0; i < 5; ++i){
-    //     const humanChoice = getHumanChoice();
-    //     const computerChoice = getComputerChoice();
-    //     playRound(humanChoice, computerChoice);
-    //     console.log(`humanscore: ${humanScore} computerscore: ${computerScore}`);
-    // }
-
-    // ctrl + k + c comment geselecteerde text
-     
-    if (humanScore == computerScore){
-        console.log(`The game is a draw`);
-    } else if (humanScore > computerScore){
-        console.log(`You win the game`);
-    } else {console.log(`You lose the game`);
-
-    }
+    const rock = document.querySelector("#rock");
+    rock.addEventListener("click", () => {
+        const cpuchoice = getComputerChoice();
+        const humchoice = "rock";
+        playRound(cpuchoice, humchoice);
+      });
     
-}
-
-// playGame();
+    const paper = document.querySelector("#paper");
+    paper.addEventListener("click", () => {
+        const cpuchoice = getComputerChoice();
+        const humchoice = "paper";
+        playRound(cpuchoice, humchoice);
+      });
+    
+    const scissors = document.querySelector("#scissors");
+    scissors.addEventListener("click", () => {
+        const cpuchoice = getComputerChoice();
+        const humchoice = "scissors";
+        playRound(cpuchoice, humchoice);
+      });
 
 
 
