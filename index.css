@@ -1,0 +1,23 @@
+body {
+    background-color: #009b77;
+    font-family: Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#rock, #paper, #scissors {
+    width: 250px;
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.options {
+    padding: 60px;
+
+}
